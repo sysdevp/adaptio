@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="cmasterPage.master.cs" Inherits="cmasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>    
+    <link rel="stylesheet" href="biz_style.css"  type="text/css" />    
+    <style type="text/css">
+        .style1
+        {
+            width: 240px;
+        }
+    </style>
+    
+    <script type="text/javascript" src="Scripts/calendar.js"></script>
+    <script type="text/javascript" src="Scripts/calendar-setup.js"></script>
+    <script type="text/javascript" src="Scripts/calendar-en.js"></script>    
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="CPH_TitleMazeLogoMenu" runat="server">
+        <table style="width: 100%;">
+                <tr>
+                    <td align="left">
+                    
+                        <asp:Image ID="imgMazeLogo" runat="server" ImageUrl="~/images/maze_logo.jpg" />
+                    
+                    </td>
+                    <td align="right">
+                    
+                        <asp:Image ID="imgTitle" runat="server" ImageUrl="~/images/title.png" />
+                    
+                    </td>
+                </tr>                
+            </table>
+            
+            <asp:Panel ID="Panel1" runat="server" BackImageUrl="~/images/bg_main.png" 
+                Height="42px">                
+                <table style="width: 100%; height: 15px; padding: 10px">
+                    <tr>
+                        <td align="left">
+                            <asp:Label ID="lblWelcome" runat="server" Font-Bold="False" 
+                                Font-Names="Times New Roman" Font-Size="Large">lblWelcome</asp:Label>
+                                
+                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/my_account.aspx"> [Change password]</asp:HyperLink>
+                        </td>                        
+                       
+                        <td align="right">
+                            <asp:LinkButton ID="lbtnSignOut" runat="server" Font-Names="Times New Roman" 
+                                Font-Size="Large" onclick="lbtnSignOut_Click" ValidationGroup="grpSignOut">Sign 
+                            Out</asp:LinkButton>
+                        </td>
+                        
+                    </tr>
+                    
+                    
+                </table>
+                </asp:Panel>            
+        </asp:ContentPlaceHolder>
+        
+        <div class="menu">
+		<ul>
+			<li><a href="c_receipt.aspx" >Generate Receipt</a></li>
+
+			<li><a href="c_view.aspx" id="administrator">View Details</a></li>
+			
+			<li><a href="c_report.aspx" id="a1">Send Report</a></li>
+				
+		  
+		</ul>
+	</div>
+    </div>
+       <asp:ContentPlaceHolder ID="CPH_Use" runat="server">                        
+        <div align="center">                        
+        </div>                        
+    </asp:ContentPlaceHolder> 
+    </form>
+</body>
+</html>
